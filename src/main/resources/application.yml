@@ -1,0 +1,32 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 677019531059-ulmnkuo5ah1ta1kktr385sdn3ivjkhe3.apps.googleusercontent.com
+            client-secret: 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
+            scope: openid,profile,email
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/employee
+    password: Bossbaby@25
+  flyway:
+    encoding: UTF-8
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: 'false'
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: 'true'
+    show-sql: 'true'
+  mandatory-file-encoding: UTF-8
